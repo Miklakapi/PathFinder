@@ -45,12 +45,16 @@ Editor::Type Editor::run(RenderWindow& window) {
 
 			int number = int(int(pos.x / 20)) + int(int((pos.y) / 20) * 64);
 
+			if (number < 0 || number > 2303 || pos.x < 0 || pos.x > 1280 || pos.y < 0 || pos.y > 720) return Type::None;
+
 			(square + number)->setType(::Type::Wall);
 		}
 		else if (Mouse::isButtonPressed(Mouse::Right)) {
 			Vector2i pos = { int(Mouse::getPosition(window).x), int(Mouse::getPosition(window).y) };
 
 			int number = int(int(pos.x / 20)) + int(int((pos.y) / 20) * 64);
+
+			if (number < 0 || number > 2303 || pos.x < 0 || pos.x > 1280 || pos.y < 0 || pos.y > 720) return Type::None;
 
 			if (!(number >= 0 && number <= 63 || number >= 2240 && number <= 2303 || number % 64 == 0 || (number + 1) % 64 == 0)) {
 				if ((square + number)->getType() == ::Type::Start) isStart = false;
@@ -63,6 +67,8 @@ Editor::Type Editor::run(RenderWindow& window) {
 
 			int number = int(int(pos.x / 20)) + int(int((pos.y) / 20) * 64);
 
+			if (number < 0 || number > 2303 || pos.x < 0 || pos.x > 1280 || pos.y < 0 || pos.y > 720) return Type::None;
+
 			if (!(number >= 0 && number <= 63 || number >= 2240 && number <= 2303 || number % 64 == 0 || (number + 1) % 64 == 0)) {
 				if ((square + number)->getType() == ::Type::Stop) isEnd = false;
 				(square + number)->setType(::Type::Start);
@@ -73,6 +79,8 @@ Editor::Type Editor::run(RenderWindow& window) {
 			Vector2i pos = { int(Mouse::getPosition(window).x), int(Mouse::getPosition(window).y) };
 
 			int number = int(int(pos.x / 20)) + int(int((pos.y) / 20) * 64);
+
+			if (number < 0 || number > 2303 || pos.x < 0 || pos.x > 1280 || pos.y < 0 || pos.y > 720) return Type::None;
 
 			if (!(number >= 0 && number <= 63 || number >= 2240 && number <= 2303 || number % 64 == 0 || (number + 1) % 64 == 0)) {
 				if ((square + number)->getType() == ::Type::Start) isStart = false;
