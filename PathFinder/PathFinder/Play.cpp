@@ -10,8 +10,8 @@ Play::Type Play::run() {
 		clock.restart();
 		on = !on;
 	}
-	if (Keyboard::isKeyPressed(Keyboard::Escape)) return Type::Return;
-	if (Keyboard::isKeyPressed(Keyboard::R) && clock.getElapsedTime().asSeconds() >= 0.2) {
+	else if (Keyboard::isKeyPressed(Keyboard::Escape)) return Type::Return;
+	else if (Keyboard::isKeyPressed(Keyboard::R) && clock.getElapsedTime().asSeconds() >= 0.2) {
 		clock.restart();
 		reset();
 	}
