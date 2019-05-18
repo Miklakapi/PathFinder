@@ -128,6 +128,7 @@ void Game::run(RenderWindow& window) {
 
 	if (fpsCounter) FpsCounter->run();
 }
+
 void Game::draw(RenderWindow& window) {
 	switch (type) {
 	case Type::InIntro:
