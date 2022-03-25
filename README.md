@@ -1,5 +1,5 @@
 # PathFinder
->Application that shows the path finder.
+>Application that shows the path finder algorithm.
 
 ## Table of Contents
 * [General info](#general-info)
